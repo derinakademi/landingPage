@@ -1,0 +1,567 @@
+/* Genel */
+html, body{
+    scroll-behavior: smooth;/
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8;
+    color: #333333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(209, 209, 209, 0.3); /* Başlangıçta soluk */
+    height: 65px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #F8F8F8;
+    z-index: 1000;
+    padding: 0 20px;
+    transition: transform 0.4s ease-in-out, border 0.4s ease-in-out;
+}
+
+/* Navbar tamamen kayboluyor */
+header.hidden{
+    transform: translateY(-100%);
+}
+
+/* Navbar yukarıdan kayarak geri geliyor */
+header.scrolled{
+    border-bottom: 2px solid #D1D1D1; /* Kalın border ile geliyor */
+    transform: translateY(0);
+}
+
+header.scrolled #login{
+    display: none; /* Giriş Yap butonunu yok oluyor */
+}
+
+header.scrolled #startSmall{
+    display: block; /* Kaydırınca Hemen Başla butonu geliyor */
+}
+
+/* Hero */
+#hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    padding-top: 80px;
+}
+
+header h1{
+    font-size: 1.5em;
+    margin-left: 30px;
+    text-align: left;
+    font-family: "Nunito-Bold", sans-serif;
+    line-height: 150%;
+}
+
+#hero h1{
+    font-size: 3em;
+    font-weight: bold;;
+}
+
+#hero h2{
+    text-align: center;
+    margin-top: 50px;
+    max-width: 60%;
+    font-size: 1em;
+}
+
+/* Butonlar */
+button{
+    padding: 13px 15px;
+    font-size: 0.85em;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+button#login{
+    display: block;
+    font-weight: bold;
+    background-color: #F8F8F8;
+    color: #333333;
+    border: 2px solid #D1D1D1;
+    transition: all 0.3s ease-in-out;
+    margin: 0 70px;
+}
+
+button#login:hover{
+    background-color: #E0E0E0;
+    border-color: #BDBDBD;
+    color: #222222;
+    transform: scale(1.05);
+}
+
+button#startSmall{
+    display: none;
+    padding: 14px 20px;
+    margin: 0 50px 0 15px;
+    background-color: #34C759;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+button#startSmall:hover{
+    background-color: #2EAD4E;
+    box-shadow: 0px 5px 15px rgba(52, 199, 89, 0.4); /* Hafif ışık efekti veriyor */
+    transform: scale(1.1);
+}
+
+/* En altta yer alan Hemen Başla butonu */
+button#startBig{
+    position: relative;
+    margin: 60px 0 60px 0;
+    padding: 20px 50px;
+    background-color: #34C759;
+    color: #FFFFFF;
+    border: none;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    font-size: 1.1em;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+button#startBig{
+box-shadow: 0 0 25px #34C759;
+}
+
+button#startBig:hover{
+    box-shadow: 0 0 5px #34C759,
+                0 0 25px #34C759,
+                0 0 50px #34C759,
+                0 0 75px #34C759;
+}
+
+button#startBig:before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255,255,255, 0) 30%,
+        rgba(255,255,255, .8),
+        rgba(255,255,255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+}
+
+@keyframes shine{
+    0% {left: -100px}
+    20% {left: 100%}
+    100% {left: 100%}
+}
+
+button#startBig:before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255,255,255, 0) 30%,
+        rgba(255,255,255, .8),
+        rgba(255,255,255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    animation: shine 3s infinite linear;
+}
+
+/* Üstte yer alan Hemen Başla butonu */
+button#startBig3d{
+    position: relative;
+    margin: 60px 0 60px 0;
+    padding: 20px 50px;
+    background-color: #34C759;
+    color: #FFFFFF;
+    border: none;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    font-size: 1.1em;
+    font-weight: bold;
+    overflow: hidden;
+    box-shadow: 0px 6px 0px #249C46, 0px 10px 15px rgba(52, 199, 89, 0.3); /* 3D Etkisi */
+    transition: all 0.1s ease-in-out;
+}
+
+button#startBig3d:active{
+    box-shadow: 0px 2px 0px #249C46, 0px 5px 10px rgba(52, 199, 89, 0.3); /* Gölge küçülsün */
+    transform: translateY(4px); /* Aşağı kaydır */
+}
+
+button#startBig3d:before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255,255,255, 0) 30%,
+        rgba(255,255,255, .8),
+        rgba(255,255,255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    animation: shine 3s infinite linear;
+}
+
+.course-list{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Normalde 6 sütun olacak */
+    gap: 30px; /* Kutular arasındaki mesafe aynı kalacak */
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    max-width: 1000px; /* Sayfanın ortasında kalmasını sağlar */
+    margin: 0 auto;
+}
+
+/* course section'ı */
+.course-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course{
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Course kutularının içindeki ikonlar */
+.course img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    object-fit: contain;
+}
+
+.course-name{
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Küçük ekranlarda 3x3 düzene geçecek */
+@media (max-width: 1000px){
+    .course-list{
+        grid-template-columns: repeat(3, 1fr); /* 3 sütun olacak */
+    }
+}
+
+/* Daha küçük ekranlarda 2 sütuna düşecek */
+@media (max-width: 600px){
+    .course-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.course-wrapper:nth-child(1) .course{background-color: #00C7BE;}
+.course-wrapper:nth-child(2) .course{background-color: #F73751;}
+.course-wrapper:nth-child(3) .course{background-color: #2FB6F5;}
+.course-wrapper:nth-child(4) .course{background-color: #FF9000;}
+.course-wrapper:nth-child(5) .course{background-color: #FFCC00;}
+.course-wrapper:nth-child(6) .course{background-color: #AF52DE;}
+
+/* info section'ı */
+.info-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 220px auto;
+    gap: 80px;
+    padding: 0 60px;
+}
+
+.info-text{
+    flex: 1;
+    max-width: 50%;
+}
+
+.info-text h2{
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+.info-text p{
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.info-container img{
+    width: 100%;
+    height: auto;
+    flex: 1;
+    max-width: 400px;
+    min-width: 300px;
+    flex-shrink: 0; /* Sayfa küçüldüğünde orantıyı koruyor */
+}
+
+@media (max-width: 1024px){
+    .info-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .info-text{
+        max-width: 90%;
+    }
+
+    .info-container img{
+        max-width: 60%;
+        min-width: 250px;
+    }
+}
+
+/* animatedPart section'ı */
+#animatedPart{
+    position: relative;
+    height: 140vh;
+    overflow: hidden;
+    margin-top: -90px;
+}
+
+/* Süzülecek nesneleri içeren konteyner (bitmedi daha denemek için böyleler) */
+.floating-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.floating-item{
+    position: absolute;
+    width: 100px;
+    opacity: 0.9;
+}
+
+.floating-item:nth-child(1){ top: 10%; left: 5%; }
+.floating-item:nth-child(2){ top: 50%; left: 20%; }
+.floating-item:nth-child(3){ top: 30%; right: 10%; }
+.floating-item:nth-child(4){ bottom: 20%; left: 50%; }
+.floating-item:nth-child(5){ bottom: 10%; right: 30%; }
+
+@keyframes float-only{
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+
+.float-only{
+    animation: float-only 3s ease-in-out infinite alternate;
+}
+
+@keyframes float-and-rotate{
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-30px) rotate(90deg); }
+}
+
+.float-and-rotate{
+    animation: float-and-rotate 3s ease-in-out infinite alternate;
+}
+
+@media (max-width: 768px){
+    .floating-item{
+        width: 60px;
+    }
+}
+
+/* courseDemo section'ı */
+#courseDemo{
+    padding: 200px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    min-height: 100vh;
+}
+
+.course-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 300px;
+    gap: 30px;
+}
+
+/* Ortadakinin yönünü diğerlerinden ters yapmak için */
+.course-item.reverse{
+    flex-direction: row-reverse;
+}
+
+.course-item img{
+    width: 50%;
+    height: auto;
+    max-width: 500px;
+    min-width: 250px;
+}
+
+.course-item p{
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+    max-width: 45%;
+    word-wrap: break-word;
+}
+
+@media (max-width: 1024px) {
+    #courseDemo {
+        padding: 100px 5%;
+        gap: 100px;
+    }
+
+    .course-item {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .course-item img {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .course-item p {
+        max-width: 90%;
+    }
+}
+
+/* lastPart section'ı */
+#lastPart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 200px 10%;
+    background-color: #2F5D45;
+    color: #FFFFFF;
+}
+
+.lastPart-container{
+    max-width: 700px;
+}
+
+#lastPart h2{
+    font-size: 2.7em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+#lastPart p{
+    font-size: 1.1em;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 auto 20px auto;
+    max-width: 80%;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Footer */
+footer{
+    background-color: #1E2A38;
+    color: #FFFFFF;
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.footer-section{
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-section h4{
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.footer-section ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li{
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.footer-section a, .footer-section p{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-section a:hover::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: width 0.4s ease-in-out;
+}
+
+.footer-section a:hover::after{
+    width: 100%;
+}
+
+@media (max-width: 900px){
+    .footer-container{
+        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 sütun olacak */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-section{
+        min-width: unset;
+    }
+}
+
+@media (max-width: 600px){
+    .footer-container{
+        grid-template-columns: repeat(2, 1fr); /* Mobilde tek sütuna düş */
+    }
+}

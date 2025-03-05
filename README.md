@@ -10,3 +10,4 @@
 - Kurs adları öğrenilip, değiştirilmeli.
 - floating-item'ların yerine konulacak 3D nesneler bulunmalı.
 - Footer feedback'e göre güncellenebilir.
+- animatedPart'ın arkaplan rengi nesnelere göre güncellenebilir.

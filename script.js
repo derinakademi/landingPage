@@ -3,15 +3,6 @@ let header = document.querySelector("header");
 let isHidden = false;
 let isScrolledPast = false;
 
-
-document.addEventListener("scroll", () => {
-    let scrollPosition = window.scrollY;
-    document.querySelectorAll(".floating-item").forEach((item, index) => {
-        let speed = (index + 1) * 0.1; // Her nesneye farklı hız ver
-        item.style.transform = `translateY(${scrollPosition * speed}px) rotate(${scrollPosition * 0.2}deg)`;
-    });
-});
-
 window.addEventListener("scroll", function (){
     if (window.scrollY > 100 && !isHidden){
         header.classList.add("hidden"); // Navbar tamamen kayboluyor
@@ -43,10 +34,10 @@ window.addEventListener("scroll", function (){
     }, 500);
 
     function slideBackground(){
-        gsap.to("#animatedPart", {
+        gsap.to("#neural-network", {
             scrollTrigger: {
                 trigger: "#info",
-                start: "bottom 90%", /* Daha yukarıdan başlat */
+                start: "bottom bottom",
                 end: "bottom top",
                 scrub: 2
             },
@@ -55,3 +46,88 @@ window.addEventListener("scroll", function (){
         });
     }
 })();
+
+// Particles.js kütüphanesi
+document.addEventListener("DOMContentLoaded", function () {
+    particlesJS("particles-js", {
+        particles: {
+            number: {
+                value: 100, // particle sayısı
+                density: {
+                    enable: true,
+                    value_area: 800,
+                },
+            },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: {
+                value: 0.5,
+                random: false,
+            },
+            size: {
+                value: 3,
+                random: true,
+            },
+            line_linked: {
+                enable: true, // link efektini veriyor
+                distance: 150,
+                color: "#ffffff",
+                opacity: 0.6,
+                width: 1,
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+            },
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "grab", // interaktif yapıyor
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push", // sol tık ile yeni particle ekleniyor
+                },
+            },
+            modes: {
+                grab: {
+                    distance: 180,
+                    line_linked: {
+                        opacity: 1, // linklerin opaklığı
+                    },
+                },
+                push: {
+                    particles_nb: 4, // sol tık ile eklenen particle sayısı
+                },
+            },
+        },
+        retina_detect: true,
+    });
+});
+
+// netural-network section'ında yazıya efekt veriyor
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".neural-text", {
+            scrollTrigger: {
+                trigger: "#neural-network",
+                start: "top 30%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 50,
+            duration: 3,
+            ease: "power2.out"
+        });
+    }
+});
+

@@ -292,6 +292,7 @@ button#startBig3d:before{
     justify-content: center;
     max-width: 1100px;
     margin: 220px auto;
+    margin-bottom: 70px;
     gap: 80px;
     padding: 0 60px;
 }
@@ -337,58 +338,49 @@ button#startBig3d:before{
     }
 }
 
-/* animatedPart section'ı */
-#animatedPart{
+/* neural-network section'ı */
+#neural-network{
     position: relative;
-    height: 140vh;
+    width: 100%;
+    height: 900px;
     overflow: hidden;
-    margin-top: -90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
-/* Süzülecek nesneleri içeren konteyner (bitmedi daha denemek için böyleler) */
-.floating-container{
+#particles-js{
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
-.floating-item{
+.neural-text{
     position: absolute;
-    width: 100px;
-    opacity: 0.9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    max-width: 800px;
+    color: white;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
 }
 
-.floating-item:nth-child(1){ top: 10%; left: 5%; }
-.floating-item:nth-child(2){ top: 50%; left: 20%; }
-.floating-item:nth-child(3){ top: 30%; right: 10%; }
-.floating-item:nth-child(4){ bottom: 20%; left: 50%; }
-.floating-item:nth-child(5){ bottom: 10%; right: 30%; }
-
-@keyframes float-only{
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-30px); }
+.neural-text h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.float-only{
-    animation: float-only 3s ease-in-out infinite alternate;
-}
-
-@keyframes float-and-rotate{
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-30px) rotate(90deg); }
-}
-
-.float-and-rotate{
-    animation: float-and-rotate 3s ease-in-out infinite alternate;
-}
-
-@media (max-width: 768px){
-    .floating-item{
-        width: 60px;
-    }
+.neural-text p{
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 /* courseDemo section'ı */

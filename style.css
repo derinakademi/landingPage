@@ -345,7 +345,7 @@ button#startBig3d:before{
 
 .neural-text{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -366,6 +366,50 @@ button#startBig3d:before{
     line-height: 1.6;
 }
 
+#neural-network button{
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 768px){
+    #neural-network{
+        height: 700px;
+    }
+    
+    .neural-text{
+        top: 35%;
+    }
+    
+    .neural-text h2{
+        font-size: 1.8rem;
+    }
+    
+    .neural-text p{
+        font-size: 1rem;
+    }
+    
+    #neural-network button{
+        bottom: 20%;
+    }
+}
+
+@media (max-width: 480px){
+    #neural-network{
+        height: 600px;
+    }
+    
+    .neural-text h2{
+        font-size: 1.5rem;
+    }
+    
+    #neural-network button{
+        bottom: 15%;
+        padding: 15px 30px;
+    }
+}
+
 /* Footer */
 footer{
     background-color: #1E2A38;
@@ -373,13 +417,6 @@ footer{
     padding: 60px 10%;
     display: flex;
     justify-content: center;
-}
-
-#neural-network button{
-    position: absolute;
-    bottom: 18%;  /* Butonu aşağı kaydır */
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .footer-container{

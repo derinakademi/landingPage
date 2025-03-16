@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Derin Akademi</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
 </head>
 <body>
     <header>
         <h1>DERİN AKADEMİ</h1>
         <navbar>
-            <button id="login">Giriş Yap</button>
             <button id="startSmall">HEMEN BAŞLA</button>
         </nav>
     </header>
     
     <section id="hero">
-        <h1>DERİN AKADEMİ</h1>
-        <h2>Yapay zeka artık hayatın her yerinde! Peki, sen de bu dünyaya 
-            adım atmaya hazır mısın? Bu platformda, sıfırdan başlayıp adım 
+        <!-- <h1>DERİN AKADEMİ</h1> -->
+        <canvas id="riveCanvas"></canvas>
+        <h2>Bu platformda, sıfırdan başlayıp adım 
             adım AI dünyasını keşfedecek, gerçek projelerle pratik yaparak 
             kendini geliştireceksin. Geleceğin teknolojisini öğrenmeye hemen 
             başla!</h2>
@@ -35,37 +34,37 @@
                 <div class="course">
                     <img src="images/course1.png" alt="Icon">
                 </div>
-                <p class="course-name">CourseName</p>
+                <p class="course-name">Derin Öğrenme</p>
             </div>
             <div class="course-wrapper">    
                 <div class="course">
                     <img src="images/course2.png" alt="Icon">
                 </div>
-                <p class="course-name">CourseName</p>
+                <p class="course-name">Makine Öğrenmesi (Tablolu Verilerle)</p>
             </div>
             <div class="course-wrapper">
                 <div class="course">
                     <img src="images/course3.png" alt="Icon">
                 </div>
-                <p class="course-name">CourseName</p>
+                <p class="course-name">Lineer Cebir</p>
             </div>
             <div class="course-wrapper">
                 <div class="course">
                     <img src="images/course4.png" alt="Icon">
                 </div>
-                <p class="course-name">CourseName</p>
+                <p class="course-name">Kalkülüs</p>
             </div>
             <div class="course-wrapper">
                 <div class="course">
                     <img src="images/course5.png" alt="Icon">
                 </div>
-                <p class="course-name">CourseName</p>
+                <p class="course-name">Olasılık</p>
             </div>
             <div class="course-wrapper">
                 <div class="course">
                     <img src="images/course6.png" alt="Icon">
                 </div>
-                <p class="course-name">CourseName</p>
+                <p class="course-name">Kod Okuryazarlığı</p>
             </div>
         </div>
     </section>
@@ -98,7 +97,7 @@
                         yapay zeka eğitimlerimiz tam senin için! Açık ve net anlatımlarla 
                         sıfırdan yapay zeka mantığını kavra ve kodlarla pratiğe dök.</p>
                 </div>
-                <img src="images/foto1.png" alt="">
+                <img src="images/foto3.png" alt="">
             </div>
         </section>
     
@@ -109,68 +108,37 @@
                 <p>Yapay zeka artık hayatın her yerinde! Bu platformda, sıfırdan başlayarak adım adım AI dünyasını keşfedecek, 
                    gerçek projelerle pratik yaparak kendini geliştireceksin.</p>
             </div>
+            <button id="startBig">HEMEN BAŞLA</button>
         </section>        
     </div>
-
-    <section id="courseDemo">
-        <div class="course-item">
-            <img src="images/foto1.png" alt="Ders Tanıtımı">
-            <p>Lorem, ipsum dolor sit amet consec tetur adipisicing elit . Dolore
-                voluptates tempora perspiciat is laboriosam. Eligendi veritat is tempore
-                totam, inventore ea architec to! Hic , eveniet iure? Laboriosam fugit
-                dolorem porro exercitat ionem. Delec tus, tempore?</p>
-        </div>
-        <div class="course-item reverse">
-            <img src="images/foto2.png" alt="Proje Gösterimi">
-            <p>Lorem, ipsum dolor sit amet consec tetur adipisicing elit . Dolore
-                voluptates tempora perspiciat is laboriosam. Eligendi veritat is tempore
-                totam, inventore ea architec to! Hic , eveniet iure? Laboriosam fugit
-                dolorem porro exercitat ionem. Delec tus, tempore?</p>
-        </div>
-        <div class="course-item">
-            <img src="images/foto1.png" alt="İleri Seviye Eğitimler">
-            <p>Lorem, ipsum dolor sit amet consec tetur adipisicing elit . Dolore
-                voluptates tempora perspiciat is laboriosam. Eligendi veritat is tempore
-                totam, inventore ea architec to! Hic , eveniet iure? Laboriosam fugit
-                dolorem porro exercitat ionem. Delec tus, tempore?</p>
-        </div>
-    </section>
-
-    <section id="lastPart">
-        <div>
-            <h2>Lorem, ipsum dolor sit amet</h2>
-            <p>Lorem, ipsum dolor sit amet consec tetur adipisicing elit . Dolore
-                voluptates tempora perspiciat is laboriosam.</p>
-            <button id="startBig">HEMEN BAŞLA</button>
-        </div>
-    </section>
 
     <footer>
         <div class="footer-container">
             <div class="footer-section copyRight">
                 <h4>DERİN AKADEMİ</h4>
+                <a href="">Gizlilik Şartları</a>
                 <p>&copy; 2025</p>
-                <p>Privacy — Terms</p>
             </div>
             <div class="footer-section">
-                <h4>Courses</h4>
+                <h4>Kurslarımız</h4>
                 <ul>
-                    <li><a href="#">Course-1</a></li>
-                    <li><a href="#">Course-2</a></li>
-                    <li><a href="#">Course-3</a></li>
-                    <li><a href="#">Course-4</a></li>
-                    <li><a href="#">Course-5</a></li>
-                    <li><a href="#">Course-6</a></li>
+                    <li><a href="#">Derin Öğrenme</a></li>
+                    <li><a href="#">Makine Öğrenmesi (Tablolu Verilerle)</a></li>
+                    <li><a href="#">Lineer Cebir</a></li>
+                    <li><a href="#">Kalkülüs</a></li>
+                    <li><a href="#">Olasılık</a></li>
+                    <li><a href="#">Kod Okuryazarlığı</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Our Team</h4>
+                <h4>Hakkımızda</h4>
                 <ul>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Takımımız</a></li>
+                    <li><a href="#">Vizyonumuz</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Contact Us</h4>
+                <h4>İletişim</h4>
                 <ul>
                     <li>Lorem ipsum</li>
                     <li><a href="mailto:loremipsum@example.com">loremipsum@example.com</a></li>

@@ -12,7 +12,7 @@ body{
 }
 
 /* Header */
-header {
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,15 +65,15 @@ header h1{
     line-height: 150%;
 }
 
-#hero h1{
+/* #hero h1{
     font-size: 3em;
     font-weight: bold;;
-}
+} */
 
 #hero h2{
     text-align: center;
-    margin-top: 50px;
-    max-width: 60%;
+    margin-bottom: -10px;
+    max-width: 50%;
     font-size: 1em;
 }
 
@@ -83,23 +83,6 @@ button{
     font-size: 0.85em;
     cursor: pointer;
     border-radius: 50px;
-}
-
-button#login{
-    display: block;
-    font-weight: bold;
-    background-color: #F8F8F8;
-    color: #333333;
-    border: 2px solid #D1D1D1;
-    transition: all 0.3s ease-in-out;
-    margin: 0 70px;
-}
-
-button#login:hover{
-    background-color: #E0E0E0;
-    border-color: #BDBDBD;
-    color: #222222;
-    transform: scale(1.05);
 }
 
 button#startSmall{
@@ -383,96 +366,6 @@ button#startBig3d:before{
     line-height: 1.6;
 }
 
-/* courseDemo section'ı */
-#courseDemo{
-    padding: 200px 10%;
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
-    min-height: 100vh;
-}
-
-.course-item{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 300px;
-    gap: 30px;
-}
-
-/* Ortadakinin yönünü diğerlerinden ters yapmak için */
-.course-item.reverse{
-    flex-direction: row-reverse;
-}
-
-.course-item img{
-    width: 50%;
-    height: auto;
-    max-width: 500px;
-    min-width: 250px;
-}
-
-.course-item p{
-    font-size: 1.1em;
-    color: #333;
-    line-height: 1.6;
-    max-width: 45%;
-    word-wrap: break-word;
-}
-
-@media (max-width: 1024px) {
-    #courseDemo {
-        padding: 100px 5%;
-        gap: 100px;
-    }
-
-    .course-item {
-        flex-direction: column !important;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .course-item img {
-        width: 80%;
-        max-width: 400px;
-    }
-
-    .course-item p {
-        max-width: 90%;
-    }
-}
-
-/* lastPart section'ı */
-#lastPart{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 200px 10%;
-    background-color: #2F5D45;
-    color: #FFFFFF;
-}
-
-.lastPart-container{
-    max-width: 700px;
-}
-
-#lastPart h2{
-    font-size: 2.7em;
-    font-weight: bold;
-    margin-bottom: 40px;
-}
-
-#lastPart p{
-    font-size: 1.1em;
-    font-weight: normal;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 auto 20px auto;
-    max-width: 80%;
-    line-height: 1.8;
-    text-align: center;
-}
-
 /* Footer */
 footer{
     background-color: #1E2A38;
@@ -480,6 +373,13 @@ footer{
     padding: 60px 10%;
     display: flex;
     justify-content: center;
+}
+
+#neural-network button{
+    position: absolute;
+    bottom: 18%;  /* Butonu aşağı kaydır */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .footer-container{

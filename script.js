@@ -41,7 +41,7 @@ window.addEventListener("scroll", function (){
                 end: "bottom top",
                 scrub: 2
             },
-            background: "linear-gradient(0deg, rgba(0,157,184,0.8) 0%, rgba(67,171,189,1) 15%, rgba(248,248,248,0) 100%)",
+            background: "linear-gradient(0deg, rgba(47,93,69,0.8) 0%, rgba(47,93,69,1) 15%, rgba(248,248,248,0) 100%)",
             duration: 1
         });
     }
@@ -113,12 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // netural-network section'ında yazıya efekt veriyor
-document.addEventListener("DOMContentLoaded", function () {
-    if (window.gsap && window.ScrollTrigger) {
+document.addEventListener("DOMContentLoaded", function (){
+    if (window.gsap && window.ScrollTrigger){
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.from(".neural-text", {
-            scrollTrigger: {
+        gsap.from(".neural-text",{
+            scrollTrigger:{
                 trigger: "#neural-network",
                 start: "top 30%",
                 toggleActions: "play none none none"
@@ -131,3 +131,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function (){
+    const canvas = document.getElementById("riveCanvas");
+
+    const container = canvas.parentElement;
+    const maxWidth = 1000;
+    const maxHeight = 400;
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = Math.min(container.clientWidth * dpr, maxWidth * dpr);
+    canvas.height = Math.min(container.clientHeight * dpr, maxHeight * dpr);
+    canvas.style.width = Math.min(container.clientWidth, maxWidth) + "px";
+    canvas.style.height = Math.min(container.clientHeight, maxHeight) + "px";
+
+    const ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+
+    const r = new rive.Rive({
+        src: "images/yaparak_ogren.riv",
+        canvas: canvas,
+        autoplay: true,
+        stateMachines: "AnimationSequence",
+        fit: rive.Fit.Contain,
+        onLoad: function () {
+            r.resizeDrawingSurfaceToCanvas();
+        }
+    });
+});

@@ -303,7 +303,6 @@ button#startBig3d:before{
     color: #9945c4;
 }
 
-
 .info-text p{
     font-size: 1.2em;
     line-height: 1.8;
@@ -515,7 +514,7 @@ footer{
 .team-container{
     max-width: 1200px;
     margin: 7.5em auto 3.75em;
-    padding: 0 1.25em;
+    padding: 0.5em 1.25em 1.5em;
 }
 
 .team-header{

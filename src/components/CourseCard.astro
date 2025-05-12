@@ -1,0 +1,14 @@
+---
+export interface Props {
+    name: string;
+    image: string;
+    bgColor: string;
+}
+const { name, image, bgColor } = Astro.props;
+---
+<div class="course-wrapper">
+    <div class="course" style={`background-color: ${bgColor}`}>
+        <img src={image} alt="Icon">
+    </div>
+    <p class="course-name">{name}</p>
+</div>

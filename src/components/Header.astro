@@ -1,0 +1,11 @@
+---
+const currentPath = Astro.url.pathname;
+const isTeamPage = currentPath === '/our-team';
+---
+
+<header>
+    <h1>DERİN AKADEMİ</h1>
+    <navbar>
+        {!isTeamPage && <button id="startSmall">HEMEN BAŞLA</button>}
+    </nav>
+</header>

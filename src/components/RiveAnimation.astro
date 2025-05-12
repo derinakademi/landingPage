@@ -1,0 +1,55 @@
+---
+---
+
+<div class="rive-container">
+  <canvas id="riveCanvas" width="400" height="400" />
+</div>
+
+<style>
+  .rive-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+<script is:inline>
+  window.addEventListener("load", () => {
+    const canvas = document.getElementById("riveCanvas");
+    if (!canvas) return;
+
+    const container = canvas.parentElement;
+    const maxWidth = 1000;
+    const maxHeight = 400;
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = Math.min(container.clientWidth * dpr, maxWidth * dpr);
+    canvas.height = Math.min(container.clientHeight * dpr, maxHeight * dpr);
+    canvas.style.width = Math.min(container.clientWidth, maxWidth) + "px";
+    canvas.style.height = Math.min(container.clientHeight, maxHeight) + "px";
+
+    const ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+
+    if (window.rive) {
+      const r = new window.rive.Rive({
+        src: "/images/yaparak_ogren.riv",
+        canvas: canvas,
+        autoplay: true,
+        stateMachines: "AnimationSequence",
+        fit: window.rive.Fit.Contain,
+        onLoad: function () {
+          r.resizeDrawingSurfaceToCanvas();
+        }
+      });
+    }
+  });
+</script>

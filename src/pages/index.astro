@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CourseCard from '../components/CourseCard.astro';
+import InfoSection from '../components/InfoSection.astro';
+import NeuralNetworkSection from '../components/NeuralNetworkSection.astro';
+import RiveAnimation from '../components/RiveAnimation.astro';
+import { courses } from "../data/courses";
+import { infos } from "../data/infos";
+---
+
+<BaseLayout>
+    <section id="hero">
+        <!-- <h1>DERİN AKADEMİ</h1> -->
+        <RiveAnimation />
+        <p>İster yeni başlıyor ol, ister deneyimli ol, gerçek dünya senaryolarıyla Yapay Zeka teknolojilerini keşfedin ve pratik beceriler edinin!</p>
+        <button id="startBig3d">HEMEN BAŞLA</button>
+    </section>
+    
+    <section id="courses">
+        <div class="course-list">
+            {courses.map(course => (
+                <CourseCard {...course} />
+            ))}
+        </div>
+    </section>
+
+    <section id="info">
+        {infos.map(info => (
+            <InfoSection {...info} />
+        ))}
+    </section>
+    
+    <NeuralNetworkSection />
+
+</BaseLayout>

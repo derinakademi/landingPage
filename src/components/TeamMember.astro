@@ -1,0 +1,16 @@
+---
+export interface Props { // Type safety sağlamak için, hangi propsların olduğunu belirtiyor
+    name: string;
+    image: string;
+    bgColor: string;
+}
+const { name, image, bgColor } = Astro.props;
+---
+<div class="team-member">
+    <div class="member-image" style={`background: ${bgColor}`}>
+        <img src={image} alt={name} />
+    </div>
+    <div class="member-info">
+        <h3>{name}</h3>
+    </div>
+</div>

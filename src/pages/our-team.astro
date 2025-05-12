@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TeamMember from "../components/TeamMember.astro";
+import { teamMembers } from "../data/teamMembers";
+---
+
+<BaseLayout>
+<div class="team-container">
+    <div class="team-header">
+        <h2>Ekibimizle Tanışın</h2>
+        <p>Yapay zeka dünyasında size rehberlik edecek deneyimli ve tutkulu ekibimizle tanışın. Her bir üyemiz, 
+            kendi alanında uzman ve size en iyi öğrenme deneyimini sunmak için burada.</p>
+    </div>
+
+    <div class="team-grid">
+        {teamMembers.map(member => (
+            <TeamMember {...member} /> 
+        ))} <!-- JavaScript spread syntaxi, propsları tek tek yazmak yerine otomatik hallediyor (name, image, bgColor tek tek yazmamak için) -->
+    </div>
+</div>
+</BaseLayout>

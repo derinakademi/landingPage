@@ -1,0 +1,105 @@
+<section id="neural-network">
+    <div id="particles-js"></div>
+    <div class="neural-text">
+        <h2>Geleceği Yapay Zeka ile Şekillendir</h2>
+        <p>Yapay zeka artık hayatın her yerinde! Bu platformda, sıfırdan başlayarak adım adım AI dünyasını keşfedecek,
+           gerçek projelerle pratik yaparak kendini geliştireceksin.</p>
+    </div>
+    <button id="startBig">HEMEN BAŞLA</button>
+</section>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!window.particlesJS) return;
+        
+        // Particles.js kütüphanesi
+        window.particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "grab", // interaktif yapıyor
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push", // sol tık ile yeni particle ekleniyor
+                },
+            },
+            modes: {
+                grab: {
+                    distance: 180,
+                    line_linked: {
+                        opacity: 1, // linklerin opaklığı
+                    },
+                },
+                push: {
+                    particles_nb: 4, // sol tık ile eklenen particle sayısı
+                },
+            },
+        },
+        retina_detect: true,
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!window.gsap || !window.ScrollTrigger) return;
+
+        window.gsap.registerPlugin(ScrollTrigger);
+
+        // neural-text için fade in animasyon
+        window.gsap.to(['.neural-text', '#startBig'], {
+            scrollTrigger: {
+                trigger: '#neural-network',
+                start: 'top 80%',
+                end: 'top 20%',
+                scrub: 1,
+                toggleActions: 'play none none none'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power1.out',
+            stagger: 0.2
+        });
+
+        // startBig butonu için fade in animasyon
+        window.gsap.to('#startBig', {
+            scrollTrigger: {
+                trigger: '#neural-network',
+                start: 'top 40%',
+                end: 'top 10%',
+                scrub: 1,
+                toggleActions: 'play none none none'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 2,
+            ease: 'power1.out',
+            stagger: 0.2
+        });
+    });
+</script>

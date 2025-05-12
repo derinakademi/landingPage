@@ -1,0 +1,17 @@
+---
+export interface Props{
+    title: string;
+    text: string;
+    image: string;
+    reverse?: boolean; // zorunlu değil, default değeri false
+}
+const { title, text, image, reverse = false } = Astro.props;
+---
+
+<div class="info-container" style={`flex-direction: ${reverse ? "row-reverse" : "row"}`}>
+    <div class="info-text">
+        <h2>{title}</h2>
+        <p>{text}</p>
+    </div>
+    <img src={image} alt="">
+</div>

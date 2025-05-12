@@ -2,7 +2,7 @@
 ---
 
 <div class="rive-container">
-  <canvas id="riveCanvas" width="400" height="400" />
+  <canvas id="riveCanvas" width="800" height="800" />
 </div>
 
 <style>
@@ -28,7 +28,7 @@
 
     const container = canvas.parentElement;
     const maxWidth = 1000;
-    const maxHeight = 400;
+    const maxHeight = 800;
     const dpr = window.devicePixelRatio || 1;
 
     canvas.width = Math.min(container.clientWidth * dpr, maxWidth * dpr);
